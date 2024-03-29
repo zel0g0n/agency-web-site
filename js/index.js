@@ -2,7 +2,8 @@ const bars = document.querySelectorAll('.burger'),
       navbar = document.querySelector('.nav'),
       wrapper = document.querySelector('.wrapper'),
       headerItem = document.querySelector('.header__item'),
-      formBtn = document.querySelector('.form-btn')
+      formBtn = document.querySelector('.form-btn'),
+      navLinks = document.querySelectorAll('.nav__item-link')
 
 
 headerItem.addEventListener('click',(e) => {
@@ -15,6 +16,12 @@ headerItem.addEventListener('click',(e) => {
         e.target.parentElement.style.display='none'
       }, 150);
       
+    }
+    if(cname.includes('nav__item')) {
+      navbar.classList.remove('animation')
+      document.body.classList.remove('hide')
+      bars[1].style.display='none'
+      bars[0].style.display='block'
     }
 })
 
